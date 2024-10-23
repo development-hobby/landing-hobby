@@ -4,6 +4,7 @@ import Hobby from '../icons/Hobby.astro'
 import CountMinor from './CountMinor.astro'
 import Link from '../Link.astro'
 import MenuIcons from '../icons/Menu.astro'
+import PlayStore from '../icons/PlayStore.astro'
 ---
 
 <header class='header_bg w-screen relative h-screen'>
@@ -14,11 +15,11 @@ import MenuIcons from '../icons/Menu.astro'
       <Hobby class='hover:scale-110 transition-all' />
     </a>
     <ul class='flex flex-row gap-x-5 max-sm:hidden'>
-      <Link
+      <!-- <Link
         href='/blog'
         title='Blog'
         class='hover:outline hover:outline-1 hover:outline-white/60 outline-offset-2 rounded-lg'
-      />
+      /> -->
       <Link
         href='#function'
         title='Funciones'
@@ -78,8 +79,13 @@ import MenuIcons from '../icons/Menu.astro'
       través de tus pasatiempos favoritos! ¡Descarga nuestra aplicación muy
       pronto!
     </p>
-    <div class='w-[70%] h-[200px] text-center mt-16 max-sm:mt-14'>
+    <div
+      class='w-[70%] h-[200px] flex items-center justify-center text-center mt-10 max-sm:mt-14'
+    >
       <CountMinor />
+      <!-- <a href='' target='_blank'>
+        <PlayStore />
+      </a> -->
     </div>
   </section>
 </header>

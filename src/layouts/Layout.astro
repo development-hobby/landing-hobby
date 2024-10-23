@@ -36,6 +36,19 @@ const { title, description } = Astro.props
     <slot />
   </body>
 </html>
+
+<script async src='https://www.googletagmanager.com/gtag/js?id=G-D2N1Z02KH9'
+></script>
+<script>
+  globalThis.dataLayer = globalThis.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
+
+  gtag('config', 'G-D2N1Z02KH9')
+</script>
+
 <style is:global>
   * {
     padding: 0;

@@ -33,10 +33,10 @@ export default function VideoPlayer({ description, icon, src }: VideoProps) {
       {!isPlaying && (
         <PlayIcon className='transition-all absolute top-[40%] w-10 h-10 opacity-50' />
       )}
-      <span className='w-full h-12 max-sm:h-8 flex flex-row gap-x-4 max-sm:gap-x-2 items-center justify-center text-xl max-sm:text-lg rounded-tl-lg rounded-b-lg bg-[#B48F13]'>
-        {icon === 'ART' && <ArtHobby className='size-10 max-sm:size-7' />}
-        {icon === 'MUSIC' && <MusicHobby className='size-10 max-sm:size-7' />}
-        {icon === 'GAMER' && <GamerHobby className='size-10 max-sm:size-7' />}
+      <span className='w-full h-12 max-sm:h-8 flex flex-row gap-x-4 max-sm:gap-x-2 items-center justify-center text-xl max-sm:text-sm rounded-tl-lg rounded-b-lg bg-[#B48F13]'>
+        {icon === 'ART' && <ArtHobby className='size-10 max-sm:size-6' />}
+        {icon === 'MUSIC' && <MusicHobby className='size-10 max-sm:size-6' />}
+        {icon === 'GAMER' && <GamerHobby className='size-10 max-sm:size-6' />}
         {description}
       </span>
     </div>

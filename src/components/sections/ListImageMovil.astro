@@ -1,0 +1,128 @@
+---
+import Description from '../DescriptionImageMovil.astro'
+---
+
+<ul
+  id='container-list'
+  class='flex w-full flex-row max-sm:flex-wrap z-10 justify-center items-center gap-x-10 max-sm:gap-x-5 max-sm:gap-y-5 mt-12 max-sm:mt-2'
+>
+  <li
+    class='w-[280px] max-sm:w-[150px] opacity-0 flex flex-col items-center justify-center'
+  >
+    <div
+      class='absolute w-[75%] h-[300px] max-sm:h-[160px] top-0 left-0 -rotate-[10deg] bg-primary rounded-2xl'
+    >
+    </div>
+    <img
+      class='z-10'
+      src='/image-movil/screen-register.webp'
+      alt='Imagen de pantalla de registro'
+      loading='lazy'
+    />
+    <Description>Regístrate</Description>
+  </li>
+  <li
+    class='w-[280px] max-sm:w-[150px] opacity-0 flex flex-col items-center justify-center'
+  >
+    <img
+      src='/image-movil/end-register.webp'
+      alt='Imagen de pantalla de paso final de registro'
+      loading='lazy'
+    />
+    <Description>Selecciona tu hobby</Description>
+  </li>
+  <li
+    class='w-[280px] opacity-0 max-sm:w-[150px] flex flex-col items-center justify-center'
+  >
+    <img
+      src='/image-movil/screen-publish.webp'
+      loading='lazy'
+      alt='Imagen de pantalla de publicar contenido'
+    />
+    <Description>Publica tu contenido</Description>
+  </li>
+  <li
+    class='w-[280px] max-sm:w-[150px] opacity-0 flex flex-col items-center justify-center'
+  >
+    <div
+      class='absolute w-[75%] h-[300px] max-sm:h-[160px] top-0 right-0 rotate-[10deg] bg-primary rounded-2xl'
+    >
+    </div>
+    <img
+      class='z-10'
+      src='/image-movil/screen-crown.webp'
+      loading='lazy'
+      alt='Imagen de pantalla de sistema de ranking'
+    />
+    <Description>Participa en el ranking</Description>
+  </li>
+</ul>
+
+<script>
+  const $listImgMovil = document.querySelectorAll<HTMLLIElement>(
+    '#container-list > li'
+  )
+  const $containerListImgMovil = document.querySelector('#container-list')
+
+  const observe = new IntersectionObserver(
+    (entry) => {
+      const element = entry[0]
+      if (element.isIntersecting) {
+        $listImgMovil.forEach((element, index) => {
+          const $backdrop = element.querySelector('div')
+          element.style.animationDelay = `${index * 400}ms`
+          element.classList.add('transition-scale')
+          element.classList.add('animation-fade-in-up')
+          element.onmouseenter = () => {
+            element.style.scale = '1.05'
+            if ($backdrop) {
+              setTimeout(() => {
+                $backdrop.style.scale = '1.10'
+                $backdrop.classList.add('transition-scale')
+              }, 100)
+            }
+          }
+          element.onmouseleave = () => {
+            element.style.scale = '1'
+            if ($backdrop) {
+              setTimeout(() => {
+                $backdrop.style.scale = '1'
+                $backdrop.classList.add('transition-scale')
+              }, 100)
+            }
+          }
+        })
+      }
+    },
+    { threshold: 0.2, rootMargin: '10px' }
+  )
+  if ($containerListImgMovil) {
+    observe.observe($containerListImgMovil)
+  }
+</script>
+
+<style>
+  .transition-scale {
+    transition: all ease-in 500ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .animation-fade-in-up {
+    animation-name: fade-in-up;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(120px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

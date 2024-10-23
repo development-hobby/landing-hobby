@@ -1,0 +1,69 @@
+---
+import ArrowDown from './icons/ArrowDown.astro'
+
+interface Props {
+  title: string
+}
+---
+
+<div class='h-auto w-[80%] max-sm:w-full collection-container'>
+  <button
+    class='button-collection w-96 max-sm:w-[100%] h-12 px-5 py-4 flex flex-row justify-between text-left items-center hover:bg-neutral-800/80 transition-colors bg-neutral-800 rounded-md text-md font-medium'
+  >
+    {Astro.props.title}
+    <ArrowDown />
+  </button>
+  <div
+    class='collection-wrapper [transition:height_0.5s_ease-in-out;] w-full mt-5 bg-neutral-800 p-0 rounded-md overflow-hidden transition-all ease-in-out duration-500'
+    style='height: 0;'
+  >
+    <div class='collection-content w-full p-5'>
+      <slot />
+    </div>
+  </div>
+</div>
+
+<script>
+  const containers = document.querySelectorAll(
+    '.collection-container'
+  ) as NodeListOf<HTMLDivElement>
+
+  containers.forEach((container) => {
+    const $button = container.querySelector(
+      '.button-collection'
+    ) as HTMLButtonElement
+    const $collectionWrapper = container.querySelector(
+      '.collection-wrapper'
+    ) as HTMLDivElement
+    const $collectionContent = container.querySelector(
+      '.collection-content'
+    ) as HTMLDivElement
+
+    let isOpen = false
+
+    $button.addEventListener('click', () => {
+      isOpen = !isOpen
+
+      const $svg = $button.querySelector('svg')
+      if (isOpen) {
+        $svg?.classList.remove('rotate-down')
+        $svg?.classList.add('rotate-up')
+        const contentHeight = $collectionContent.scrollHeight
+        $collectionWrapper.style.height = `${contentHeight}px`
+      } else {
+        $collectionWrapper.style.height = '0'
+        $svg?.classList.remove('rotate-up')
+        $svg?.classList.add('rotate-down')
+      }
+    })
+  })
+</script>
+
+<style is:global>
+  .rotate-up {
+    transform: rotate(180deg);
+  }
+  .rotate-down {
+    transform: rotate(0deg);
+  }
+</style>

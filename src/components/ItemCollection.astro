@@ -1,0 +1,10 @@
+---
+interface Props {
+  title: string
+}
+---
+
+<ul class='w-full flex flex-col gap-y-5'>
+  <h4 class='text-base font-semibold'>{Astro.props.title}</h4>
+  <slot />
+</ul>

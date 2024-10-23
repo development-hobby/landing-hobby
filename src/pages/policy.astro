@@ -1,0 +1,163 @@
+---
+import Collection from '../components/Collection.astro'
+import ItemCollection from '../components/ItemCollection.astro'
+import PointPolicy from '../components/PointPolicy.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title='Políticas de Privacidad de Hobby'>
+  <header
+    class='w-[90%] max-sm:w-full max-sm:px-3 py-10 flex flex-col gap-y-5 border-b-2 border-gray-400 pt-12 mx-auto'
+  >
+    <h1 class='text-3xl max-sm:text-2xl font-bold'>
+      Políticas de Privacidad de Hobby
+    </h1>
+    <p class='text-base w-[80%] max-sm:w-full mt-8 opacity-90'>
+      Bienvenido a Hobby. La protección de tu privacidad es fundamental para
+      nosotros. Esta Política de Privacidad describe cómo recopilamos, usamos,
+      almacenamos y protegemos tu información personal cuando usas nuestra
+      aplicación. Al utilizar Hobby, aceptas las prácticas descritas en esta
+      Política de Privacidad.
+    </p>
+  </header>
+  <section
+    class='w-[90%] max-sm:w-full max-sm:justify-center px-5 flex flex-col gap-y-5 my-10 mx-auto'
+  >
+    <h4 class='mt-7 text-lg'>Información</h4>
+    <Collection title='Información que recopilamos'>
+      <ItemCollection title='Información proporcionada por el usuario:'>
+        <PointPolicy>
+          • Información de registro: Al crear una cuenta en Hobby, te
+          solicitamos información personal, como tu nombre, dirección de correo
+          electrónico y contraseña.
+        </PointPolicy>
+        <PointPolicy>
+          • Perfil de usuario: Puedes proporcionar información adicional para tu
+          perfil, como una foto de perfil, una breve biografía y tus hobbies
+          seleccionados.
+        </PointPolicy>
+        <PointPolicy>
+          • Contenido compartido: Recopilamos las imágenes, videos y cualquier
+          otro contenido que subas a la plataforma.
+        </PointPolicy>
+      </ItemCollection>
+      <ItemCollection title='Información recopilada automáticamente:'>
+        <PointPolicy>
+          • Información del dispositivo: Recopilamos información sobre el
+          dispositivo que usas para acceder a Hobby, como el tipo de
+          dispositivo, sistema operativo, identificadores únicos del dispositivo
+          y datos de la red móvil.
+        </PointPolicy>
+        <PointPolicy>
+          • Información de uso: Recopilamos información sobre cómo usas la
+          aplicación, incluyendo las páginas y características que visitas, el
+          tiempo que pasas en la plataforma y las interacciones con otros
+          usuarios.
+        </PointPolicy>
+      </ItemCollection>
+    </Collection>
+    <Collection title='Uso de la Información'>
+      <ItemCollection title='Para proporcionar y mejorar nuestros servicios:'>
+        <PointPolicy>
+          • Utilizamos la información recopilada para operar, mantener y mejorar
+          la plataforma Hobby.
+        </PointPolicy>
+        <PointPolicy>
+          • Personalizamos tu experiencia en la aplicación, mostrando contenido
+          relevante y sugerencias basadas en tus hobbies y actividades.
+        </PointPolicy>
+        <PointPolicy>
+          • Procesamos y mostramos el contenido que subes, incluyendo la
+          participación en el sistema de ranking.
+        </PointPolicy>
+      </ItemCollection>
+      <ItemCollection title='Comunicación:'>
+        <PointPolicy>
+          • Utilizamos tu información de contacto para enviarte notificaciones,
+          actualizaciones y respuestas a tus consultas.
+        </PointPolicy>
+        <PointPolicy>
+          • Podemos enviarte comunicaciones de marketing sobre nuevos hobbies,
+          características y promociones, a menos que decidas optar por no
+          recibir estas comunicaciones.
+        </PointPolicy>
+      </ItemCollection>
+    </Collection>
+    <Collection title='Compartir la Información'>
+      <ItemCollection title='Con otros usuarios:'>
+        <PointPolicy>
+          • La información de tu perfil, incluyendo tus hobbies seleccionados,
+          contenido compartido y tu posición en los rankings, será visible para
+          otros usuarios de la plataforma.
+        </PointPolicy>
+      </ItemCollection>
+      <ItemCollection title='Con terceros:'>
+        <PointPolicy>
+          • No vendemos ni alquilamos tu información personal a terceros.
+          Podemos compartir tu información con proveedores de servicios que nos
+          ayudan a operar la plataforma, siempre bajo estrictas obligaciones de
+          confidencialidad.
+        </PointPolicy>
+      </ItemCollection>
+    </Collection>
+    <h4 class='mt-7 text-lg'>Seguridad y derechos</h4>
+    <Collection title='Seguridad de la Información'>
+      <ItemCollection title='Medidas de seguridad:'>
+        <PointPolicy>
+          • Implementamos medidas de seguridad técnicas y organizativas
+          adecuadas para proteger tu información personal contra el acceso no
+          autorizado, la alteración, divulgación o destrucción.
+        </PointPolicy>
+      </ItemCollection>
+      <ItemCollection title='Retención de datos:'>
+        <PointPolicy>
+          • Retenemos tu información personal mientras tu cuenta esté activa o
+          según sea necesario para proporcionarte nuestros servicios. Podemos
+          retener y usar tu información según sea necesario para cumplir con
+          nuestras obligaciones legales, resolver disputas y hacer cumplir
+          nuestros acuerdos.
+        </PointPolicy>
+      </ItemCollection>
+    </Collection>
+    <Collection title='Tus Derechos y Opciones'>
+      <ItemCollection title='Acceso y corrección:'>
+        <PointPolicy>
+          • Puedes acceder y actualizar tu información personal a través de la
+          configuración de tu cuenta en Hobby.
+        </PointPolicy>
+      </ItemCollection>
+      <ItemCollection title='Opciones de comunicación:'>
+        <PointPolicy>
+          • Puedes optar por no recibir comunicaciones de marketing siguiendo
+          las instrucciones de cancelación de suscripción en los correos
+          electrónicos que te enviamos.
+        </PointPolicy>
+      </ItemCollection>
+    </Collection>
+    <Collection title='Cambios en la Política de Privacidad'>
+      <ItemCollection title='Actualizaciones:'>
+        <PointPolicy>
+          • Podemos actualizar esta Política de Privacidad ocasionalmente. Te
+          notificaremos sobre cualquier cambio significativo a través de la
+          aplicación o por otros medios antes de que el cambio entre en
+          vigencia.
+        </PointPolicy>
+      </ItemCollection>
+    </Collection>
+    <h4 class='mt-7 text-lg'>Contacto</h4>
+    <Collection title='Contacto'>
+      <ItemCollection title='Información de contacto:'>
+        <PointPolicy>
+          • Si tienes preguntas o inquietudes sobre esta Política de Privacidad,
+          contáctanos a través del correo electrónico:
+          <a
+            href='https://www.facebook.com/hobbyAppStartup'
+            target='_blank'
+            class='font-semibold hover:text-secondary transition-all'
+            >https://www.facebook.com/hobbyAppStartup.</a
+          >
+        </PointPolicy>
+      </ItemCollection>
+    </Collection>
+  </section>
+</Layout>

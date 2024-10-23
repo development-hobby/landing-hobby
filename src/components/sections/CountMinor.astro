@@ -1,0 +1,210 @@
+<div class='flex flex-row gap-x-12 mx-auto justify-center'>
+  <div
+    class='text-center text-4xl flex flex-col items-center justify-center font-bold'
+  >
+    <div class='countdown-container'>
+      <div class='countdown-digit-container'>
+        <h4 id='days-tens' class='countdown-number'>0</h4>
+        <h4 id='days-tens-new' class='countdown-number hidden'></h4>
+      </div>
+      <div class='countdown-digit-container'>
+        <h4 id='days-ones' class='countdown-number'>0</h4>
+        <h4 id='days-ones-new' class='countdown-number hidden'></h4>
+      </div>
+    </div>
+    <div class='text-2xl font-bold text-center mt-5 opacity-80'>D</div>
+  </div>
+  <div
+    class='text-center text-4xl flex flex-col items-center justify-center font-bold'
+  >
+    <div class='countdown-container'>
+      <div class='countdown-digit-container'>
+        <h4 id='hours-tens' class='countdown-number'>0</h4>
+        <h4 id='hours-tens-new' class='countdown-number hidden'></h4>
+      </div>
+      <div class='countdown-digit-container'>
+        <h4 id='hours-ones' class='countdown-number'>0</h4>
+        <h4 id='hours-ones-new' class='countdown-number hidden'></h4>
+      </div>
+    </div>
+    <div class='text-2xl font-bold text-center mt-5 opacity-80'>H</div>
+  </div>
+  <div
+    class='text-center flex flex-col items-center justify-center text-4xl font-bold'
+  >
+    <div class='countdown-container'>
+      <div class='countdown-digit-container'>
+        <h4 id='minutes-tens' class='countdown-number'>0</h4>
+        <h4 id='minutes-tens-new' class='countdown-number hidden'></h4>
+      </div>
+      <div class='countdown-digit-container'>
+        <h4 id='minutes-ones' class='countdown-number'>0</h4>
+        <h4 id='minutes-ones-new' class='countdown-number hidden'></h4>
+      </div>
+    </div>
+    <div class='text-2xl font-bold text-center mt-5 opacity-80'>M</div>
+  </div>
+  <div
+    class='text-center flex flex-col items-center justify-center text-4xl font-bold'
+  >
+    <div class='countdown-container'>
+      <div class='countdown-digit-container'>
+        <h4 id='seconds-tens' class='countdown-number'>0</h4>
+        <h4 id='seconds-tens-new' class='countdown-number hidden'></h4>
+      </div>
+      <div class='countdown-digit-container'>
+        <h4 id='seconds-ones' class='countdown-number'>0</h4>
+        <h4 id='seconds-ones-new' class='countdown-number hidden'></h4>
+      </div>
+    </div>
+    <div class='text-2xl font-bold text-center mt-5 opacity-80'>S</div>
+  </div>
+</div>
+
+<script>
+  const countdown = () => {
+    const targetDate = new Date('2024-12-31T23:59:59').getTime()
+    let previousValues = {
+      days: { tens: 0, ones: 0 },
+      hours: { tens: 0, ones: 0 },
+      minutes: { tens: 0, ones: 0 },
+      seconds: { tens: 0, ones: 0 },
+    }
+
+    const updateCountdown = () => {
+      const now = new Date().getTime()
+      const timeLeft = targetDate - now
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24))
+      const hours = Math.floor(
+        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      )
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60))
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000)
+
+      updateDigits('days', days)
+      updateDigits('hours', hours)
+      updateDigits('minutes', minutes)
+      updateDigits('seconds', seconds)
+    }
+
+    const updateDigits = (
+      unit: keyof typeof previousValues,
+      newValue: number
+    ) => {
+      const tens = Math.floor(newValue / 10)
+      const ones = newValue % 10
+      const elementTensOld = document.getElementById(`${unit}-tens`)
+      const elementOnesOld = document.getElementById(`${unit}-ones`)
+      const elementTensNew = document.getElementById(`${unit}-tens-new`)
+      const elementOnesNew = document.getElementById(`${unit}-ones-new`)
+      const previousTens = previousValues[unit].tens
+      const previousOnes = previousValues[unit].ones
+
+      if (tens !== previousTens) {
+        if (elementTensOld && elementTensNew) {
+          animateDigitChange(elementTensOld, elementTensNew, tens)
+          previousValues[unit].tens = tens
+        }
+      }
+      if (ones !== previousOnes) {
+        if (elementOnesOld && elementOnesNew) {
+          animateDigitChange(elementOnesOld, elementOnesNew, ones)
+          previousValues[unit].ones = ones
+        }
+      }
+    }
+
+    const animateDigitChange = (
+      elementOld: Element,
+      elementNew: Element,
+      newValue: number
+    ) => {
+      if (elementOld && elementNew) {
+        elementNew.textContent = newValue.toString()
+        elementOld.classList.add('slide-up-exit')
+        elementNew.classList.remove('hidden')
+        elementNew.classList.add('slide-up-enter')
+
+        setTimeout(() => {
+          elementOld.textContent = newValue.toString()
+          elementOld.classList.remove('slide-up-exit')
+          elementNew.classList.add('hidden')
+          elementNew.classList.remove('slide-up-enter')
+        }, 500)
+      }
+    }
+
+    updateCountdown()
+    setInterval(updateCountdown, 1000)
+  }
+
+  countdown()
+</script>
+
+<style>
+  .countdown-number {
+    font-size: 3rem;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    transition:
+      transform 0.5s ease,
+      opacity 0.5s ease;
+  }
+
+  .hidden {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .slide-up-enter {
+    animation: slide-up-enter 0.5s ease-in-out forwards;
+  }
+
+  .slide-up-exit {
+    animation: slide-up-exit 0.5s ease-in-out forwards;
+  }
+
+  @keyframes slide-up-enter {
+    0% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-up-exit {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+
+  .countdown-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .countdown-digit-container {
+    position: relative;
+    width: 1.5rem;
+  }
+
+  .countdown-container {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .flex {
+    gap: 2rem;
+  }
+</style>

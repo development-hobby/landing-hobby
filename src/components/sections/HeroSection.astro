@@ -1,0 +1,252 @@
+---
+import UserStar from '../icons/UserStar.astro'
+import Img from '../icons/Img.astro'
+import Crown from '../icons/Crown.astro'
+import Escaletor from '../icons/Escaletor.astro'
+import ListImageMovil from './ListImageMovil.astro'
+import VideoPlayer from '../react/Video'
+---
+
+<main class='main_bg h-auto w-screen'>
+  <section
+    id='function'
+    class='h-screen w-full [content-visibility:auto] px-10 max-sm:px-5 flex flex-col relative max-sm:pt-2 pt-5 items-center bg-transparent'
+  >
+    <img class='absolute top-[50%] left-0' src='/image-movil/line.webp' />
+    <h2
+      class='mt-10 max-sm:mt-5 max-sm:text-center text-3xl font-extrabold text-title'
+    >
+      Utiliza la app de manera simple <span
+        class='text-3xl font-extrabold text-primary text-title'>pasos</span
+      >
+    </h2>
+    <ListImageMovil />
+  </section>
+  <section
+    id='concern'
+    class='h-screen w-full flex flex-row max-sm:flex-col bg-transparent'
+  >
+    <div
+      class='flex flex-col pl-40 pt-24 max-sm:pl-0 max-sm:pt-0 w-[50%] max-sm:w-full'
+    >
+      <h3
+        class='text-3xl max-sm:text-xl max-sm:mt-5 max-sm:text-center font-extrabold text-title'
+      >
+        ¿Tienes dudas? Descubre cómo sacarle el máximo <span
+          class='text-3xl font-extrabold max-sm:text-xl text-primary text-title'
+          >provecho a Hobby</span
+        >
+      </h3>
+      <div
+        class='flex w-[70%] max-sm:w-full justify-start flex-col max-sm:mt-5 mt-12 gap-y-8 max-sm:pt-5 py-10
+        border-l-2 max-sm:border-l-0 border-l-primary'
+      >
+        <button
+          id='what-apasionado'
+          class='button-info w-auto flex flex-row gap-x-5 items-center min-h-10 text-xl pl-8 text-left'
+        >
+          <UserStar class='max-sm:w-12 max-sm:h-12' />
+          Que es un apasionado?
+        </button>
+        <button
+          id='capshot-bycuts'
+          class='button-info w-auto flex flex-row gap-x-5 items-center min-h-10 text-xl pl-8 text-left'
+        >
+          <Img class='max-sm:w-12 max-sm:h-12' />
+          Capshot y bycuts
+        </button>
+        <button
+          id='crown'
+          class='button-info w-auto flex flex-row gap-x-5 items-center min-h-10 text-xl pl-8 text-left'
+        >
+          <Crown class='text-primary max-sm:w-12 max-sm:h-12' />
+          Tipos de reacciones
+        </button>
+        <button
+          id='ranking'
+          class='button-info w-auto flex flex-row gap-x-5 items-center min-h-10 text-xl pl-8 text-left'
+        >
+          <Escaletor class='max-sm:w-12 max-sm:h-12' />
+          Función del Ranking
+        </button>
+      </div>
+    </div>
+    <div
+      class='w-[50%] max-sm:mt-2 max-sm:w-full max-sm:h-[40%] mt-20 items-center justify-center flex'
+    >
+      <img
+        id='img-info'
+        class='bg-contain'
+        src='/image-information/what-apasionado.webp'
+      />
+    </div>
+  </section>
+</main>
+<section
+  id='content'
+  class='w-screen h-screen items-center py-10 flex flex-col section-alcoiris'
+>
+  <div class='flex flex-col w-[80%] gap-y-5'>
+    <h4 class='text-title text-3xl font-extrabold'>Hobbies compartidos</h4>
+    <p class='text-xl'>Inspírate con nuestros usuarios apasionados</p>
+  </div>
+
+  <div class='flex flex-row w-[80%] justify-between gap-x-16 pt-8'>
+    <VideoPlayer
+      description='Arte'
+      icon={'ART'}
+      src='/video/video2.mp4'
+      client:visible
+    />
+    <VideoPlayer
+      description='Musica'
+      icon={'MUSIC'}
+      src='/video/video1.mp4'
+      client:visible
+    />
+    <VideoPlayer
+      description='Gamer'
+      icon={'GAMER'}
+      src='/video/video3.mp4'
+      client:visible
+    />
+  </div>
+</section>
+
+<script>
+  // Seleccionar la imagen y los botones
+  const $imgInfo = document.querySelector('#img-info') as HTMLImageElement
+  const buttons = document.querySelectorAll('.button-info')
+
+  buttons.forEach((button) => {
+    // Hover en un botón
+    button.addEventListener('mouseenter', () => {
+      // Eliminar hover y selección de los otros botones
+      buttons.forEach((btn) => {
+        if (btn !== button && !btn.classList.contains('selected')) {
+          btn.classList.remove('hovered')
+        }
+      })
+
+      // Agregar hover al botón actual si no está seleccionado
+      if (!button.classList.contains('selected')) {
+        button.classList.add('hovered')
+      }
+
+      // Actualizar la imagen al hacer hover
+      updateImage(button.id)
+    })
+
+    // Al salir del hover
+    button.addEventListener('mouseleave', () => {
+      // Solo eliminar hover si el botón no está seleccionado
+      if (!button.classList.contains('selected')) {
+        button.classList.remove('hovered')
+      }
+
+      // Remover la animación de la imagen
+      $imgInfo.classList.remove('animation-fade-in-up')
+    })
+
+    // Click en un botón (selección)
+    button.addEventListener('click', () => {
+      // Eliminar selección de todos los botones
+      buttons.forEach((btn) => {
+        btn.classList.remove('selected', 'hovered')
+      })
+
+      // Añadir selección y hover al botón actual
+      button.classList.add('selected', 'hovered')
+
+      // Actualizar la imagen al hacer click
+      updateImage(button.id)
+    })
+  })
+
+  // Función para actualizar la imagen según el botón seleccionado
+  function updateImage(buttonId: string) {
+    switch (buttonId) {
+      case 'what-apasionado':
+        $imgInfo.src = '/image-information/what-apasionado.webp'
+        break
+      case 'capshot-bycuts':
+        $imgInfo.src = '/image-information/type-publication.webp'
+        break
+      case 'crown':
+        $imgInfo.src = '/image-information/type-action.webp'
+        break
+      case 'ranking':
+        $imgInfo.src = '/image-information/ranking.webp'
+        break
+      default:
+        break
+    }
+
+    $imgInfo.classList.add('animation-fade-in-up')
+  }
+</script>
+
+<style>
+  .text-title {
+    font-family: 'Baloo 2 Variable', system-ui;
+  }
+
+  /* 🤣😂 */
+  .section-alcoiris {
+    background: linear-gradient(
+      to bottom,
+      #8700c7 0%,
+      #ab5c6a 57%,
+      #cfb80c 100%
+    );
+  }
+
+  .transition-scale {
+    transition: all ease-in 500ms;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  .animation-fade-in-up {
+    animation-name: fade-in-up;
+    animation-duration: 500ms;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(120px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .button-info {
+    opacity: 0.4;
+    transition: opacity 0.3s ease;
+  }
+
+  .button-info.hovered,
+  .button-info.selected {
+    opacity: 1;
+  }
+
+  .selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .text-title {
+    font-family: 'Baloo 2 Variable', system-ui;
+  }
+
+  .main_bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(/linear-gradient/linear-section-img.webp);
+  }
+</style>

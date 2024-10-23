@@ -23,7 +23,7 @@ export default function VideoPlayer({ description, icon, src }: VideoProps) {
     }
   }
   return (
-    <div className='relative w-[22%] flex flex-col items-center justify-center gap-y-5'>
+    <div className='relative w-[22%] max-sm:w-[40%] flex flex-col items-center justify-center gap-y-5 max-sm:gap-y-3'>
       <video
         ref={videoRef}
         onClick={handlePlayPause}
@@ -33,10 +33,10 @@ export default function VideoPlayer({ description, icon, src }: VideoProps) {
       {!isPlaying && (
         <PlayIcon className='transition-all absolute top-[40%] w-10 h-10 opacity-50' />
       )}
-      <span className='w-full h-12 flex flex-row gap-x-4 items-center justify-center text-xl rounded-tl-lg rounded-b-lg bg-[#B48F13]'>
-        {icon === 'ART' && <ArtHobby className='w-10 h-10' />}
-        {icon === 'MUSIC' && <MusicHobby className='w-10 h-10' />}
-        {icon === 'GAMER' && <GamerHobby className='w-10 h-10' />}
+      <span className='w-full h-12 max-sm:h-8 flex flex-row gap-x-4 max-sm:gap-x-2 items-center justify-center text-xl max-sm:text-lg rounded-tl-lg rounded-b-lg bg-[#B48F13]'>
+        {icon === 'ART' && <ArtHobby className='size-10 max-sm:size-7' />}
+        {icon === 'MUSIC' && <MusicHobby className='size-10 max-sm:size-7' />}
+        {icon === 'GAMER' && <GamerHobby className='size-10 max-sm:size-7' />}
         {description}
       </span>
     </div>

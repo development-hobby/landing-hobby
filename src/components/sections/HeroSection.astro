@@ -84,30 +84,31 @@ import VideoPlayer from '../react/Video'
 </main>
 <section
   id='content'
-  class='w-screen h-screen items-center py-10 flex flex-col section-alcoiris'
+  class='w-screen h-screen items-center py-10 max-sm:py-5 flex flex-col section-alcoiris'
 >
-  <div class='flex flex-col w-[80%] gap-y-5'>
-    <h4 class='text-title text-3xl font-extrabold'>Hobbies compartidos</h4>
-    <p class='text-xl'>Inspírate con nuestros usuarios apasionados</p>
+  <div class='flex flex-col w-[80%] max-sm:w-[90%] gap-y-5 max-sm:gap-y-2'>
+    <h4 class='text-title text-3xl max-sm:text-xl font-extrabold'>
+      Hobbies compartidos
+    </h4>
+    <p class='text-xl max-sm:text-base block w-full'>
+      Inspírate con nuestros usuarios apasionados
+    </p>
   </div>
 
-  <div class='flex flex-row w-[80%] justify-between gap-x-16 pt-8'>
-    <VideoPlayer
-      description='Arte'
-      icon={'ART'}
-      src='/video/video2.mp4'
-      client:visible
-    />
+  <div
+    class='flex flex-row w-[80%] max-sm:w-[90%] max-sm:justify-center max-sm:flex-wrap justify-between gap-x-16 pt-8 max-sm:pt-5 gap-y-5'
+  >
+    <VideoPlayer description='Arte' icon={'ART'} src='/1.mp4' client:visible />
     <VideoPlayer
       description='Musica'
       icon={'MUSIC'}
-      src='/video/video1.mp4'
+      src='/1.mp4'
       client:visible
     />
     <VideoPlayer
       description='Gamer'
       icon={'GAMER'}
-      src='/video/video3.mp4'
+      src='/1.mp4'
       client:visible
     />
   </div>

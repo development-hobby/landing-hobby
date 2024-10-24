@@ -24,10 +24,7 @@ interface Props {
 </div>
 
 <script>
-  const containers = document.querySelectorAll(
-    '.collection-container'
-  ) as NodeListOf<HTMLDivElement>
-
+  const containers = document.querySelectorAll('.collection-container')
   containers.forEach((container) => {
     const $button = container.querySelector(
       '.button-collection'
@@ -38,24 +35,25 @@ interface Props {
     const $collectionContent = container.querySelector(
       '.collection-content'
     ) as HTMLDivElement
-
     let isOpen = false
-
-    $button.addEventListener('click', () => {
-      isOpen = !isOpen
-
-      const $svg = $button.querySelector('svg')
-      if (isOpen) {
-        $svg?.classList.remove('rotate-down')
-        $svg?.classList.add('rotate-up')
-        const contentHeight = $collectionContent.scrollHeight
-        $collectionWrapper.style.height = `${contentHeight}px`
-      } else {
-        $collectionWrapper.style.height = '0'
-        $svg?.classList.remove('rotate-up')
-        $svg?.classList.add('rotate-down')
-      }
-    })
+    if ($button) {
+      $button.addEventListener('click', () => {
+        isOpen = !isOpen
+        const $svg = $button.querySelector('svg')
+        if (isOpen) {
+          $svg?.classList.remove('rotate-down')
+          $svg?.classList.add('rotate-up')
+          if ($collectionContent) {
+            const contentHeight = $collectionContent.scrollHeight
+            $collectionWrapper.style.height = `${contentHeight}px`
+          }
+        } else {
+          $collectionWrapper.style.height = '0'
+          $svg?.classList.remove('rotate-up')
+          $svg?.classList.add('rotate-down')
+        }
+      })
+    }
   })
 </script>
 

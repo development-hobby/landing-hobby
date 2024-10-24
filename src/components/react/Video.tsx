@@ -30,7 +30,7 @@ export default function VideoPlayer({ description, icon, src }: VideoProps) {
       <video
         ref={videoRef}
         onClick={handlePlayPause}
-        className='w-full rounded-3xl'
+        className='w-full rounded-2xl'
         src={src}
       ></video>
       {!isPlaying && (

@@ -13,11 +13,6 @@ import PlayStore from '../icons/PlayStore.astro'
   >
     <Hobby class='hover:scale-110 transition-all' />
     <ul class='flex flex-row gap-x-5 max-sm:hidden'>
-      <!-- <Link
-        href='/blog'
-        title='Blog'
-        class='hover:outline hover:outline-1 hover:outline-white/60 outline-offset-2 rounded-lg'
-      /> -->
       <Link
         href='#function'
         title='Funciones'
@@ -38,6 +33,16 @@ import PlayStore from '../icons/PlayStore.astro'
         title='Fundadores'
         class='hover:outline hover:outline-1 hover:outline-white/60 outline-offset-2 rounded-lg'
       />
+      <!-- <Link
+        href='/support'
+        title='Soporte'
+        class='hover:outline hover:outline-1 hover:outline-white/60 outline-offset-2 rounded-lg'
+      />
+      <Link
+        href='/blog'
+        title='Blog'
+        class='hover:outline hover:outline-1 hover:outline-white/60 outline-offset-2 rounded-lg'
+      /> -->
     </ul>
     <button id='button-context' class='max-sm:block z-50 hidden'>
       <MenuIcons />
@@ -54,6 +59,12 @@ import PlayStore from '../icons/PlayStore.astro'
         <Link href='#concern' title='Inquietudes' />
         <Link href='#content' title='Contenido' />
         <Link href='#footer' title='Fundadores' />
+        <!-- <Link href='/support' title='Soporte' /> -->
+        <!-- <Link
+          href='/blog'
+          title='Blog'
+          class='hover:outline hover:outline-1 hover:outline-white/60 outline-offset-2 rounded-lg'
+        /> -->
       </ul>
     </div>
     <div id='backdrop-context-menu' class='h-full z-50 w-[30%]'></div>
@@ -63,10 +74,11 @@ import PlayStore from '../icons/PlayStore.astro'
     class='mx-auto w-[70%] max-sm:w-full relative items-center p-10 justify-center flex mt-8 flex-col'
   >
     <Crown
-      class='stroke-white absolute top-0 left-[26%] max-sm:left-[10%] -rotate-12'
+      stroke='#ffff'
+      class='absolute top-0 left-[26%] max-sm:left-[10%] -rotate-12'
     />
     <h1
-      class='h1_welcome font-Baloo text-[50px] max-sm:text-4xl text-center font-extrabold mt-4 uppercase'
+      class='h1_welcome font-Baloo text-[50px] max-sm:text-4xl max-md:text-5xl text-center font-extrabold mt-4 uppercase'
     >
       Bienvenido a <span class='hobby_linear font-extrabold'>Hobby</span>
     </h1>
@@ -79,7 +91,7 @@ import PlayStore from '../icons/PlayStore.astro'
       >
     </p>
     <div
-      class='w-[70%] h-[200px] flex items-center justify-center text-center mt-10 max-sm:mt-14'
+      class='w-[70%] flex items-center justify-center text-center mt-10 max-sm:mt-14'
     >
       <CountMinor />
       <!-- <a href='' target='_blank'>

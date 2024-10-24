@@ -1,0 +1,25 @@
+---
+import ListImageMovil from './ListImageMovil.astro'
+---
+
+<section
+  id='function'
+  class='h-screen w-full [content-visibility:auto] px-10 max-sm:px-5 flex flex-col relative max-sm:pt-2 pt-5 items-center bg-transparent'
+>
+  <img class='absolute top-[50%] left-0' src='/image-movil/line.webp' />
+  <h2
+    class='mt-10 max-sm:mt-5 max-sm:text-center text-3xl max-sm:text-2xl font-extrabold text-title'
+  >
+    Utiliza la app en simple <span
+      class='text-3xl font-extrabold max-sm:text-2xl text-primary text-title'
+      >pasos</span
+    >
+  </h2>
+  <ListImageMovil />
+</section>
+
+<style>
+  .text-title {
+    font-family: 'Baloo 2 Variable', system-ui;
+  }
+</style>

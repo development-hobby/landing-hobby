@@ -12,9 +12,6 @@ export default defineConfig({
   integrations: [tailwind(), react()],
   output: 'server',
   adapter: vercel({
-    devImageService: 'squoosh',
-    edgeMiddleware: true,
-    skewProtection: true,
     webAnalytics: { enabled: true },
   }),
 })

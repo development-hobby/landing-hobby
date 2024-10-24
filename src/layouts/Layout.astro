@@ -32,8 +32,6 @@ const { title, description } = Astro.props
       name='google-site-verification'
       content='gBjdedLAueGrw7ACHkfTufReBAPGo0LEYqniw5E-U4w'
     /> -->
-    <link rel='icon' type='image/svg+xml' href='/favicon.png' />
-    <meta name='generator' content={Astro.generator} />
     <!-- <script src='https://www.googletagmanager.com/gtag/js?id=G-D2N1Z02KH9'
     ></script>
     <script>
@@ -45,8 +43,9 @@ const { title, description } = Astro.props
 
       gtag('config', 'G-D2N1Z02KH9')
     </script> -->
+    <link rel='icon' type='image/svg+xml' href='/favicon.png' />
+    <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
   </head>
   <body class='overflow-x-hidden w-screen scroll-smooth'>
     <slot />

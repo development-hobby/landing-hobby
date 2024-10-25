@@ -37,7 +37,10 @@ const { title, description } = Astro.props
     <meta property='og:title' content='Hobby Business' />
     <meta property='og:description' content={description} />
     <meta property='og:url' content='https://hobby-business.vercel.app/' />
-    <meta property='og:image' content='./screenshots/screenshots.png' />
+    <meta
+      property='og:image'
+      content='https://hobby-business.vercel.app/screenshot/screenshot.png'
+    />
 
     <!-- Twitter -->
     <meta name='twitter:card' content='summary_large_image' />
@@ -47,7 +50,10 @@ const { title, description } = Astro.props
       content='A beautiful library with SVG logos'
     />
     <meta name='twitter:creator' content='@pheralb_' />
-    <meta name='twitter:image' content='./screenshots/screenshots.png' />
+    <meta
+      name='twitter:image'
+      content='https://hobby-business.vercel.app/screenshot/screenshot.png'
+    />
     <title>{title}</title>
   </head>
   <body class='overflow-x-hidden w-screen scroll-smooth bg-neutral-950'>

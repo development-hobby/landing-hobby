@@ -23,7 +23,7 @@ export default function VideoPlayer({ description, icon, src }: VideoProps) {
     }
   }
   return (
-    <div
+    <article
       onClick={handlePlayPause}
       className='relative w-[22%] max-sm:w-[37%] flex flex-col items-center justify-center gap-y-5 max-sm:gap-y-2'
     >
@@ -36,12 +36,16 @@ export default function VideoPlayer({ description, icon, src }: VideoProps) {
       {!isPlaying && (
         <PlayIcon className='transition-all absolute top-[40%] w-10 h-10 opacity-50' />
       )}
-      <span className='w-full h-12 max-sm:h-8 flex flex-row gap-x-4 max-sm:gap-x-2 items-center justify-center text-xl max-sm:text-sm rounded-tl-lg rounded-b-lg bg-[#B48F13]'>
+      <span
+        aria-label='tipo de hobby'
+        role='log'
+        className='w-full h-12 max-sm:h-8 flex flex-row gap-x-4 max-sm:gap-x-2 items-center justify-center text-xl max-sm:text-sm rounded-tl-lg rounded-b-lg bg-[#B48F13]'
+      >
         {icon === 'ART' && <ArtHobby className='size-10 max-sm:size-6' />}
         {icon === 'MUSIC' && <MusicHobby className='size-10 max-sm:size-6' />}
         {icon === 'GAMER' && <GamerHobby className='size-10 max-sm:size-6' />}
         {description}
       </span>
-    </div>
+    </article>
   )
 }

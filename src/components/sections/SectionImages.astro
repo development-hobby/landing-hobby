@@ -6,7 +6,12 @@ import ListImageMovil from './ListImageMovil.astro'
   id='function'
   class='h-screen w-full [content-visibility:auto] px-10 max-sm:px-5 flex flex-col relative max-sm:pt-2 pt-5 items-center bg-transparent'
 >
-  <img class='absolute top-[50%] left-0' src='/image-movil/line.webp' />
+  <img
+    class='absolute top-[50%]'
+    src='/image-movil/line.webp'
+    loading='lazy'
+    alt='linea de decoración'
+  />
   <h2
     class='mt-10 max-sm:mt-5 max-sm:text-center text-3xl max-sm:text-2xl font-extrabold text-title'
   >

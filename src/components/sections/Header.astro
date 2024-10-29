@@ -1,7 +1,7 @@
 ---
 import Crown from '../icons/Crown.astro'
 import Hobby from '../icons/Hobby.astro'
-import CountMinor from './CountMinor.astro'
+import CountMinor from '../react/CountMinor/CountMinor'
 import Link from '../Link.astro'
 import MenuIcons from '../icons/Menu.astro'
 import PlayStore from '../icons/PlayStore.astro'
@@ -91,9 +91,9 @@ import PlayStore from '../icons/PlayStore.astro'
       >
     </p>
     <div
-      class='w-[70%] flex items-center justify-center text-center mt-10 max-sm:mt-14'
+      class='w-[70%] flex items-center justify-center text-center mt-10 max-sm:mt-8'
     >
-      <CountMinor />
+      <CountMinor client:load />
       <!-- <a href='' target='_blank'>
         <PlayStore />
       </a> -->

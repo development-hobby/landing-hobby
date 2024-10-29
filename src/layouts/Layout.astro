@@ -6,6 +6,7 @@ import '@fontsource/poppins/500.css'
 import '@fontsource/poppins/600.css'
 import '@fontsource/poppins/800.css'
 import '@fontsource-variable/baloo-2'
+import ViewTransitions from 'astro/components/ViewTransitions.astro'
 
 interface Props {
   title: string
@@ -29,8 +30,7 @@ const { title, description } = Astro.props
     />
     <link rel='canonical' href='https://hobby-business.vercel.app/' />
     <link rel='icon' type='image/svg+xml' href='/favicon.png' />
-    <meta name='generator' content={Astro.generator} />
-
+    <ViewTransitions />
     <!-- OG -->
     <meta property='og:type' content='website' />
     <meta property='og:title' content='Hobby Business' />

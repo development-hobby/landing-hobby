@@ -25,7 +25,7 @@ export default function VideoPlayer({ description, icon, src }: VideoProps) {
   return (
     <article
       onClick={handlePlayPause}
-      className='relative w-[22%] max-sm:w-[37%] flex flex-col items-center justify-center gap-y-5 max-sm:gap-y-2'
+      className='relative w-[21%] max-sm:w-[37%] flex flex-col items-center justify-center gap-y-2 max-sm:gap-y-2'
     >
       <video
         ref={videoRef}

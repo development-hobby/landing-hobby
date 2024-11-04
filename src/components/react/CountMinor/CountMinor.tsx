@@ -3,7 +3,7 @@ import './count-minor.css'
 
 const Countdown: React.FC = () => {
   useEffect(() => {
-    const targetDate = new Date('2024-11-05T23:59:59').getTime()
+    const targetDate = new Date('2024-11-12T23:59:59').getTime()
     let previousValues = {
       days: { tens: 0, ones: 0 },
       hours: { tens: 0, ones: 0 },

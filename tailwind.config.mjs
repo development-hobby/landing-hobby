@@ -6,10 +6,11 @@ export default {
       colors: {
         primary: '#B96BF6',
         secondary: '#F9D423',
+        dark: '#121212',
       },
       fontFamily: {
-        poppins: ['Poppins', 'system-ui'],
-        Baloo: ['Baloo 2 Variable', 'system-ui'],
+        Poppins: ['Poppins', 'system-ui'],
+        Baloo: ['"Baloo 2 Variable"', 'system-ui'],
       },
     },
     plugins: [],

@@ -39,7 +39,7 @@ export default function VideoPlayer({ description, icon, src }: VideoProps) {
       <span
         aria-label='tipo de hobby'
         role='log'
-        className='w-full h-12 max-sm:h-8 flex flex-row gap-x-4 max-sm:gap-x-2 items-center justify-center text-xl max-sm:text-sm rounded-tl-lg rounded-b-lg bg-[#B48F13]'
+        className='w-full h-12 max-sm:h-8 flex flex-row gap-x-4 max-sm:gap-x-2 items-center justify-center text-xl max-sm:text-sm rounded-tl-lg rounded-b-lg bg-[#927516] mt-4'
       >
         {icon === 'ART' && <ArtHobby className='size-10 max-sm:size-6' />}
         {icon === 'MUSIC' && <MusicHobby className='size-10 max-sm:size-6' />}

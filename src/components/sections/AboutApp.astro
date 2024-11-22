@@ -1,0 +1,18 @@
+---
+import ImagesInformation from './ImagesInformation.astro'
+import ImagesPreview from './ImagesPreview.astro'
+---
+
+<main class='main_bg h-auto w-screen max-sm:h-auto max-sm:py-5'>
+  <ImagesPreview />
+  <ImagesInformation />
+</main>
+
+<style>
+  .main_bg {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(/linear-gradient/linear-section-img.webp);
+  }
+</style>

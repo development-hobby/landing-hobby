@@ -1,0 +1,19 @@
+---
+import ExternalLink from './icons/ExternalLink.astro'
+import GooglePlay from './icons/GooglePlay.astro'
+---
+
+<a
+  href='#'
+  class='h-24 w-[300px] max-sm:w-[100%] hover:scale-110 opacity-50 transition-all relative flex items-center px-8 max-sm:px-4 flex-row rounded-lg bg-dark pointer-events-none'
+  target='_blank'
+>
+  <ExternalLink class='absolute top-2 right-2 size-5 opacity-15' />
+  <GooglePlay class='size-12 max-sm:size-10 mr-1 stroke-secondary' />
+  <span class='flex flex-col'>
+    <p class='text-sm max-sm:text-xs opacity-80 font-light'>Descarga la App</p>
+    <p class='font-semibold text-secondary text-2xl max-sm:text-lg'>
+      Google <span class='text-primary'>Play</span>
+    </p>
+  </span>
+</a>

@@ -60,7 +60,7 @@ const MobileImageList: React.FC = () => {
           src='/image-movil/screen-register.webp'
           alt='Imagen de pantalla de registro'
           loading='lazy'
-          className='z-10'
+          className='z-10 pointer-events-auto'
         />
         <p className='text-base max-sm:text-sm text-center font-bold max-sm:mt-1'>
           Regístrate
@@ -89,7 +89,7 @@ const MobileImageList: React.FC = () => {
       <li className='list-item'>
         <div className='backdrop right' />
         <img
-          className='z-10'
+          className='z-10 pointer-events-auto'
           src='/image-movil/screen-crown.webp'
           alt='Imagen de pantalla de sistema de ranking'
           loading='lazy'

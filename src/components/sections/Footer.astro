@@ -1,79 +1,101 @@
 ---
+import Hobby from '../icons/Hobby.astro'
 import Facebook from '../icons/socials/Facebook.astro'
-import Star from '../icons/Star.astro'
+import Instagram from '../icons/socials/Instagram.astro'
 import Youtube from '../icons/socials/Youtube.astro'
 ---
 
 <footer
   id='footer'
-  class='h-screen w-screen bg-neutral-950 flex-col flex items-center justify-center'
+  class='h-auto py-8 w-screen max-sm:h-auto bg-dark flex-col flex items-center justify-center'
 >
-  <section
-    class='w-full relative flex flex-col justify-center py-20 px-40 max-sm:px-5 max-sm:py-5 h-[70%]'
-  >
-    <h1 class='text-4xl text-title font-bold'>
-      Found<span class='text-title text-primary'>ers</span>
-    </h1>
-    <p
-      class='text-xl max-sm:text-base block w-[70%] max-sm:w-full mt-5 leading-10 max-sm:leading-7 opacity-80'
-    >
-      Para Hobby, crear la mayor cantidad de sonrisas en los apasionados es el
-      mayor logro que podemos alcanzar. En un mundo cada vez más desconectado,
-      crear 30 segundos de contenido que muestre felicidad, amor y el talento de
-      las personas es suficiente para nosotros. Gracias por crecer y seguir
-      avanzando.
-    </p>
-    <div class='absolute top-10 right-[28%] max-sm:hidden z-50'>
-      <Star class='absolute left-0 top-10 blur-[3px]' />
-      <Star class='absolute left-20 top-56 blur-[3px]' />
-      <Star class='absolute w-7 h-7 left-0 top-40 blur-[3px]' />
-      <Star class='absolute w-7 h-7 left-32 top-24 blur-[3px]' />
+  <div class='h-auto py-8 w-[80%] flex flex-row max-sm:flex-wrap'>
+    <div class='flex flex-col w-[20%] max-sm:w-full'>
+      <div class='flex flex-row gap-x-4 items-center'>
+        <Hobby />
+        <p class='text-3xl font-semibold'>Hobby</p>
+      </div>
+      <div class='flex flex-col gap-y-5 mt-10'>
+        <p>Siguenos:</p>
+        <div class='flex flex-row items-center gap-x-5'>
+          <Facebook />
+          <Instagram />
+          <Youtube />
+        </div>
+      </div>
     </div>
-    <p class='mt-10 text-xl text-title font-bold'>
-      CEO. Juan ALcalá / CTO. Jesus Alcalá
-    </p>
-  </section>
-  <section
-    class='h-[30%] w-[80%] max-sm:w-full max-sm:flex-row max-sm:flex-wrap border-t-2 flex-col flex border-t-primary'
-  >
-    <ul
-      class='flex flex-row items-center justify-center max-sm:flex-wrap max-sm:flex-col flex-1 gap-x-14'
+    <div
+      class='flex flex-row pb-28 max-sm:pb-16 max-sm:gap-y-5 gap-x-16 w-[80%] max-sm:w-full max-sm:flex-col justify-center max-sm:justify-start max-sm:mt-10 max-sm:flex-wrap'
     >
-      <li>
-        <a href='/policy' class='hover:text-primary transition-colors'
-          >Políticas y privacidad</a
-        >
-      </li>
-      <li>
-        <a href='/comunity-rules' class='hover:text-primary transition-colors'
-          >Normas de la comunidad</a
-        >
-      </li>
-      <li class='flex flex-row items-center gap-x-5'>
-        <p>Siguenos en:</p>
-        <a
-          title='Link Youtube'
-          href='https://www.youtube.com/@hobby-i6n'
-          target='_blank'
-          class='block hover:scale-110 hover:cursor-pointer transition focus:outline focus:outline-1 focus:outline-white focus:outline-offset-2'
-        >
-          <Youtube class='w-10 h-10' />
-        </a>
-        <a
-          title='Link Facebook'
-          href='https://www.facebook.com/hobbyAppStartup'
-          target='_blank'
-          class='block hover:scale-110 hover:cursor-pointer transition focus:outline focus:outline-1 focus:outline-white focus:outline-offset-2'
-        >
-          <Facebook class='w-9 h-9' />
-        </a>
-      </li>
-    </ul>
+      <div class='flex flex-col'>
+        <p class='text-xl font-medium mb-2'>Servicios</p>
+        <ul class='flex flex-col gap-y-3' title='Links a servicios'>
+          <li>
+            <a
+              class='opacity-40 font-light'
+              title='Link a Hobby Academy'
+              href='#'>Hobby Academy</a
+            >
+            <p class='text-xs font-extralight'>Proximamente!</p>
+          </li>
+          <li>
+            <a
+              class='opacity-40 font-light'
+              title='Link a Hobby Developer'
+              href='#'>Tools Developer</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class='flex flex-col'>
+        <p class='text-xl font-medium mb-2'>Ayuda</p>
+        <ul class='flex flex-col gap-y-3' title='Links a ayuda'>
+          <li>
+            <a class='opacity-40 font-light' title='Soporte de Hobby' href='#'
+              >Soporte</a
+            >
+          </li>
+          <li>
+            <a
+              class='opacity-40 font-light text-white'
+              title='Bugs de Hobby'
+              href='#'>Bugs</a
+            >
+          </li>
+        </ul>
+        <p class='text-xl font-medium mt-3'>Noticias</p>
+        <ul class='flex flex-col gap-y-3' title='Noticias de Hobby'>
+          <li>
+            <a class='opacity-40 font-light' title='Blog de Hobby' href='#'
+              >Blog</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class='fkex flex-col'>
+        <p class='text-xl font-medium mb-2'>Condiones Politicas</p>
+        <ul class='flex flex-col gap-y-3' title='Condiciones de uso de Hobby'>
+          <li>
+            <a
+              class='font-light'
+              title='Politicas de privacidad de Hobby'
+              href='/policy'>Politicas de privacidad</a
+            >
+          </li>
+          <li>
+            <a
+              class='font-light'
+              title='Condciones de uso de Hobby'
+              href='/comunity-rules'>Condiones</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <section
+    class='border-t-white/20 border-t-2 w-[80%] py-8 flex flex-row justify-between'
+  >
+    <p>© 2024 Hobby</p>
   </section>
 </footer>
-
-<style>
-  .text-title {
-    font-family: 'Baloo 2 Variable', system-ui;
-  }
-</style>

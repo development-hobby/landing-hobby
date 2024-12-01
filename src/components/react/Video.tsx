@@ -37,7 +37,7 @@ export default function VideoPlayer({ description, icon, src }: VideoProps) {
         <PlayIcon className='transition-all absolute top-[40%] w-10 h-10 opacity-50' />
       )}
       <span
-        aria-label='tipo de hobby'
+        aria-label={`Tipo de hobby ${icon}`}
         role='log'
         className='w-full h-12 max-sm:h-8 flex flex-row gap-x-4 max-sm:gap-x-2 items-center justify-center text-xl max-sm:text-sm rounded-tl-lg rounded-b-lg bg-[#927516] mt-4'
       >

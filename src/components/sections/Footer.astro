@@ -1,7 +1,7 @@
 ---
 import Hobby from '../icons/Hobby.astro'
 import Facebook from '../icons/socials/Facebook.astro'
-import Instagram from '../icons/socials/Instagram.astro'
+// import Instagram from '../icons/socials/Instagram.astro'
 import Youtube from '../icons/socials/Youtube.astro'
 ---
 
@@ -18,9 +18,21 @@ import Youtube from '../icons/socials/Youtube.astro'
       <div class='flex flex-col gap-y-5 mt-10'>
         <p>Siguenos:</p>
         <div class='flex flex-row items-center gap-x-5'>
-          <Facebook />
-          <Instagram />
-          <Youtube />
+          <a
+            href='https://www.facebook.com/hobbyAppStartup'
+            title='Facebook de Hobby'
+            target='_blank'
+          >
+            <Facebook />
+          </a>
+          <!-- <Instagram /> -->
+          <a
+            href='https://www.youtube.com/@hobby-i6n'
+            target='_blank'
+            title='Youtube de Hobby'
+          >
+            <Youtube />
+          </a>
         </div>
       </div>
     </div>
